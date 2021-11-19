@@ -1,0 +1,16 @@
+.*.swp
+.DS_Store
+*.o
+*.pyc
+*.out
+*.class
+*.code-workspace
+.idea
+.vscode
+out/
+*.iml
+.gradle/
+venv/
+node_modules/
+package-lock.json
+tsconfig.json
