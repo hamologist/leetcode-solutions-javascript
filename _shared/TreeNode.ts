@@ -12,7 +12,7 @@ export class TreeNode {
   }
 }
 
-export function inOrder(head: TreeNode) {
+export function inOrder(head: TreeNode): number[] {
   const vals: number[] = [];
 
   (function inner(_head: TreeNode | null) {
@@ -25,6 +25,9 @@ export function inOrder(head: TreeNode) {
     inner(_head.right);
   }(head));
 
-  console.log('Hello');
   return vals;
 }
+
+TreeNode.prototype.toString = function toString() {
+  return String(inOrder(this));
+};
