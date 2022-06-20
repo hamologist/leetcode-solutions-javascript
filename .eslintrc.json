@@ -20,6 +20,7 @@
         "quotes": ["error", "single", { "allowTemplateLiterals": true }],
         "no-console": "off",
         "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "no-param-reassign": "off"
     }
 }
