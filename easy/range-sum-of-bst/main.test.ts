@@ -50,7 +50,8 @@ describe('range-sum-of-bst', () => {
   testCases.forEach((testCase) => {
     const [treeNode, low, high, expected] = testCase;
     it(`should return ${expected} when tree is ${treeNode}`, () => {
-      expect(rangeSumBST(treeNode, low, high)).toBe(expected);
+      expect(rangeSumBST(treeNode, low, high))
+        .toBe(expected);
     });
   });
 });

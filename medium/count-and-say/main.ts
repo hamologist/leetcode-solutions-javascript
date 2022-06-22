@@ -14,7 +14,8 @@ function countAndSay(n: number): string {
 
     ans = groups.map(
       (group) => String(group[1]) + group[0],
-    ).join('');
+    )
+      .join('');
   }
 
   return ans;

@@ -15,35 +15,35 @@ function gameOfLife(board: number[][]): void {
     let neighbors = 0;
 
     if (aboveExists) {
-      neighbors += getNeighbor(x, y-1);
+      neighbors += getNeighbor(x, y - 1);
 
       if (leftExists) {
-        neighbors += getNeighbor(x-1, y-1);
+        neighbors += getNeighbor(x - 1, y - 1);
       }
 
       if (rightExists) {
-        neighbors += getNeighbor(x+1, y-1);
+        neighbors += getNeighbor(x + 1, y - 1);
       }
     }
 
     if (belowExists) {
-      neighbors += getNeighbor(x, y+1);
+      neighbors += getNeighbor(x, y + 1);
 
       if (leftExists) {
-        neighbors += getNeighbor(x-1, y+1);
+        neighbors += getNeighbor(x - 1, y + 1);
       }
 
       if (rightExists) {
-        neighbors += getNeighbor(x+1, y+1);
+        neighbors += getNeighbor(x + 1, y + 1);
       }
     }
 
     if (leftExists) {
-      neighbors += getNeighbor(x-1, y);
+      neighbors += getNeighbor(x - 1, y);
     }
 
     if (rightExists) {
-      neighbors += getNeighbor(x+1, y);
+      neighbors += getNeighbor(x + 1, y);
     }
 
     return neighbors;
@@ -59,10 +59,8 @@ function gameOfLife(board: number[][]): void {
         if (count < 2 || count > 3) {
           board[y][x] = 0;
         }
-      } else {
-        if (count === 3) {
-          board[y][x] = 1;
-        }
+      } else if (count === 3) {
+        board[y][x] = 1;
       }
     }
   }
@@ -76,19 +74,19 @@ function gameOfLife(board: number[][]): void {
   }
 
   let input = [
-    [0,1,0],
-    [0,0,1],
-    [1,1,1],
-    [0,0,0]
+    [0, 1, 0],
+    [0, 0, 1],
+    [1, 1, 1],
+    [0, 0, 0],
   ];
   gameOfLife(input);
   printBoard(input);
   console.log();
 
   input = [
-    [1,1],
-    [1,0]
+    [1, 1],
+    [1, 0],
   ];
-  gameOfLife(input)
+  gameOfLife(input);
   printBoard(input);
 })();

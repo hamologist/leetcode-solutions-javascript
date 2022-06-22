@@ -12,7 +12,8 @@ describe('reverse-integer', () => {
   test.each(testCases)(
     'reverse where x is %i',
     (x: number, expected: number) => {
-      expect(reverse(x)).toBe(expected);
+      expect(reverse(x))
+        .toBe(expected);
     },
   );
 });

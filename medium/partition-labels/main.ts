@@ -17,13 +17,19 @@ function partitionLabels(S: string): number[] {
     if (partition) {
       partition.right = i;
     } else {
-      partition = { left: i, right: i };
+      partition = {
+        left: i,
+        right: i,
+      };
       letterLookup.set(S[i], partition);
       letterPartitions.push(partition);
     }
   }
 
-  let currentPartition = { left: 0, right: 0 };
+  let currentPartition = {
+    left: 0,
+    right: 0,
+  };
   finalPartitions.push(currentPartition);
   for (const partition of letterPartitions) {
     if (currentPartition.right >= partition.left) {

@@ -1,14 +1,14 @@
 function findDuplicate(nums: number[]): number {
   const lookup = new Map<number, boolean>();
   let dupe = 0;
-  for (let num of nums) {
+  for (const num of nums) {
     const count = lookup.get(num) || false;
 
     if (count) {
       dupe = num;
       break;
     }
-    lookup.set(num, true)
+    lookup.set(num, true);
   }
 
   return dupe;

@@ -60,7 +60,8 @@ describe('sum-of-nodes-with-even-valued-grandparent', () => {
   test.each(testCases)(
     'sumEvenGrandparent where root is %s',
     (root, expected) => {
-      expect(sumEvenGrandparent(root)).toBe(expected);
+      expect(sumEvenGrandparent(root))
+        .toBe(expected);
     },
   );
 });

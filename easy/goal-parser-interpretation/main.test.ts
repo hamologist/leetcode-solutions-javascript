@@ -12,7 +12,8 @@ describe('goal-parser-interpretation', () => {
     const expected = testCase[1];
 
     it(`should return ${expected} when command is ${command}`, () => {
-      expect(interpret(command)).toBe(expected);
+      expect(interpret(command))
+        .toBe(expected);
     });
   });
 });

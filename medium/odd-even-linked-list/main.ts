@@ -1,8 +1,8 @@
-import { arrayToListNode, ListNode } from "../../_shared/LinkedList";
+import { arrayToListNode, ListNode } from '../../_shared/LinkedList';
 
 function oddEvenList(head: ListNode | null): ListNode | null {
   if (head === null || head.next === null || head.next.next === null) {
-    return head
+    return head;
   }
 
   let oddPtr = head;
@@ -21,7 +21,7 @@ function oddEvenList(head: ListNode | null): ListNode | null {
     }
     oddPtr = oddTarget;
     evenPtr = evenTarget;
-    oddTarget = evenPtr.next
+    oddTarget = evenPtr.next;
     evenTarget = oddTarget?.next || null;
   }
 
@@ -30,12 +30,14 @@ function oddEvenList(head: ListNode | null): ListNode | null {
 
 console.log(
   oddEvenList(
-    arrayToListNode([1, 2, 3, 4, 5])
-  )?.toArray()
-)
+    arrayToListNode([1, 2, 3, 4, 5]),
+  )
+    ?.toArray(),
+);
 
 console.log(
   oddEvenList(
-    arrayToListNode([2, 1, 3, 5, 6, 4, 7])
-  )?.toArray()
-)
+    arrayToListNode([2, 1, 3, 5, 6, 4, 7]),
+  )
+    ?.toArray(),
+);

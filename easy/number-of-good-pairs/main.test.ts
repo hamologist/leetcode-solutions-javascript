@@ -10,7 +10,8 @@ describe('number-of-good-pairs', () => {
   test.each(testCases)(
     'numIdenticalPairs where nums is %s',
     (nums: number[], expected: number) => {
-      expect(numIdenticalPairs(nums)).toBe(expected);
+      expect(numIdenticalPairs(nums))
+        .toBe(expected);
     },
   );
 });

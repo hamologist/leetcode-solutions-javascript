@@ -17,7 +17,8 @@ describe('rotate-array', () => {
   testCases.forEach((testCase) => {
     it(`when array is ${testCase[0]} and k is ${testCase[1]} result is ${testCase[2]}`, () => {
       rotate(testCase[0], testCase[1]);
-      expect(testCase[0]).toStrictEqual(testCase[2]);
+      expect(testCase[0])
+        .toStrictEqual(testCase[2]);
     });
   });
 });

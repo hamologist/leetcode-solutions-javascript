@@ -10,7 +10,10 @@ function firstUniqChar(s: string): number {
     if (letter) {
       letter.count += 1;
     } else {
-      lookup.set(s[i], { index: i, count: 1 });
+      lookup.set(s[i], {
+        index: i,
+        count: 1,
+      });
     }
   }
 

@@ -16,7 +16,8 @@ describe('find-target-indices-after-sorting-array', () => {
   test.each(testCases)(
     'targetIndices where nums is "%s", target is "%s"',
     (nums, target, expected) => {
-      expect(targetIndices(nums, target)).toStrictEqual(expected);
+      expect(targetIndices(nums, target))
+        .toStrictEqual(expected);
     },
   );
 });

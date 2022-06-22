@@ -37,7 +37,8 @@ describe('find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree', (
   test.each(testCases)(
     'getTargetCopy where original is %s, clone is %s, and target is %s',
     (original, cloned, target) => {
-      expect(getTargetCopy(original, cloned, target)).toStrictEqual(target);
+      expect(getTargetCopy(original, cloned, target))
+        .toStrictEqual(target);
     },
   );
 });

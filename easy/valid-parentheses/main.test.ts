@@ -12,7 +12,8 @@ describe('valid-parentheses', () => {
   test.each(testCases)(
     'isValid where s is "%s" and expects %s',
     (s, expected) => {
-      expect(isValid(s)).toBe(expected);
+      expect(isValid(s))
+        .toBe(expected);
     },
   );
 });

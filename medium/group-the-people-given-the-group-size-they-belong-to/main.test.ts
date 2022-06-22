@@ -18,7 +18,8 @@ describe('group-the-people-given-the-group-size-they-belong-to', () => {
       const result = groupThePeople(groupSizes);
 
       for (const nums of expected) {
-        expect(result).toContainEqual(nums);
+        expect(result)
+          .toContainEqual(nums);
       }
     },
   );

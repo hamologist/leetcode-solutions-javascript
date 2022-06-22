@@ -21,7 +21,8 @@ const testCases: [number[][], number][] = [
 describe('minimum-path-sum', () => {
   testCases.forEach((testCase) => {
     it(`for grid: ${testCase[0]}, min is ${testCase[1]}`, () => {
-      expect(minPathSum(testCase[0])).toStrictEqual(testCase[1]);
+      expect(minPathSum(testCase[0]))
+        .toStrictEqual(testCase[1]);
     });
   });
 });

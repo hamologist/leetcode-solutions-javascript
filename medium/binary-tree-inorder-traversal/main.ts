@@ -1,7 +1,8 @@
-import { TreeNode } from "../../_shared/TreeNode";
+import { TreeNode } from '../../_shared/TreeNode';
 
 function inorderTraversal(root: TreeNode | null): number[] {
   const vals: Array<number> = [];
+
   function inner(root: TreeNode | null): void {
     if (root == null) {
       return;
@@ -22,11 +23,14 @@ function inorderTraversal(root: TreeNode | null): number[] {
 
 console.log(
   inorderTraversal(
-    new TreeNode(1,
+    new TreeNode(
+      1,
       null,
-      new TreeNode(2,
+      new TreeNode(
+        2,
         new TreeNode(3),
-        null
-      ))
-  )
+        null,
+      ),
+    ),
+  ),
 );

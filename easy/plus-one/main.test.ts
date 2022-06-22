@@ -15,7 +15,8 @@ describe('plus-one', () => {
   test.each(testCases)(
     'plusOne where digits is %s',
     (digits: number[], expected: number[]) => {
-      expect(plusOne(digits)).toStrictEqual(expected);
+      expect(plusOne(digits))
+        .toStrictEqual(expected);
     },
   );
 });

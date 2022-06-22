@@ -29,7 +29,7 @@ function rotate(matrix: number[][]): void {
   input = [
     [1, 2],
     [3, 4],
-  ]
+  ];
   rotate(input);
   console.log(input);
-})()
+})();

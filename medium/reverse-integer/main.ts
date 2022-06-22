@@ -6,7 +6,9 @@ function reverse(x: number): number {
     asString = asString.replace('-', '');
   }
 
-  const ans = Number(asString.split('').reverse().join('')) * (isNegative ? -1 : 1);
+  const ans = Number(asString.split('')
+    .reverse()
+    .join('')) * (isNegative ? -1 : 1);
 
   if (ans > (2 ** 31 - 1) || ans < -(2 ** 31)) {
     return 0;

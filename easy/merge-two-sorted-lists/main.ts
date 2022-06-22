@@ -6,7 +6,8 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
       return null;
     }
     return new ListNode(l2.val, mergeTwoLists(null, l2.next));
-  } if (l2 === null) {
+  }
+  if (l2 === null) {
     return new ListNode(l1.val, mergeTwoLists(l1.next, null));
   }
   if (l1.val > l2.val) {
@@ -19,17 +20,20 @@ console.log(
   mergeTwoLists(
     arrayToListNode([1, 2, 4]),
     arrayToListNode([1, 3, 4]),
-  )?.toArray(),
+  )
+    ?.toArray(),
 );
 console.log(
   mergeTwoLists(
     null,
     null,
-  )?.toArray(),
+  )
+    ?.toArray(),
 );
 console.log(
   mergeTwoLists(
     null,
     arrayToListNode([0]),
-  )?.toArray(),
+  )
+    ?.toArray(),
 );

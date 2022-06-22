@@ -24,7 +24,8 @@ describe('max-increase-to-keep-city-skyline', () => {
   test.each(testCases)(
     'maxIncreaseKeepingSkyline when grid is %j',
     (grid, expected) => {
-      expect(maxIncreaseKeepingSkyline(grid)).toBe(expected);
+      expect(maxIncreaseKeepingSkyline(grid))
+        .toBe(expected);
     },
   );
 });

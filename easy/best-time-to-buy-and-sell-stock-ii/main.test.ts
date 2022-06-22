@@ -10,7 +10,8 @@ describe('best-time-to-buy-and-sell-stock-ii', () => {
   test.each(testCases)(
     'maxProfit with prices of %s',
     (prices: Array<number>, expected: number) => {
-      expect(maxProfit(prices)).toBe(expected);
+      expect(maxProfit(prices))
+        .toBe(expected);
     },
   );
 });

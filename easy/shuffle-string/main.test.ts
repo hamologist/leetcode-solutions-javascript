@@ -12,7 +12,8 @@ describe('shuffle-string', () => {
   test.each(testCases)(
     'restoreString where s is "%s", indices is %s and expected is %s',
     (s: string, indices: number[], expected: string) => {
-      expect(restoreString(s, indices)).toBe(expected);
+      expect(restoreString(s, indices))
+        .toBe(expected);
     },
   );
 });

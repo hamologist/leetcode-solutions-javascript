@@ -9,7 +9,8 @@ describe('subtract-the-product-and-sum-of-digits-of-an-integer', () => {
   test.each(testCases)(
     'subtractProductAndSum where n is %s and expects %s',
     (n, expected) => {
-      expect(subtractProductAndSum(n)).toBe(expected);
+      expect(subtractProductAndSum(n))
+        .toBe(expected);
     },
   );
 });

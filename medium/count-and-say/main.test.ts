@@ -9,7 +9,8 @@ describe('count-and-say', () => {
   test.each(testCases)(
     'countAndSay where n is %s and expects %s',
     (n, expected) => {
-      expect(countAndSay(n)).toBe(expected);
+      expect(countAndSay(n))
+        .toBe(expected);
     },
   );
 });

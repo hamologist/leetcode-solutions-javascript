@@ -25,7 +25,9 @@ interface NestedInteger {
 
 class NestedIterator {
   nestedList: NestedInteger[];
+
   current: number;
+
   child: NestedIterator | null;
 
   constructor(nestedList: NestedInteger[]) {
@@ -71,7 +73,7 @@ class NestedIterator {
       }
       this.child = new NestedIterator(nestedInteger.getList());
       return inner();
-    }
+    };
 
     return inner();
   }

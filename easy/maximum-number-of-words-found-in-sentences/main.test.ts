@@ -27,7 +27,8 @@ describe('maximum-number-of-words-found-in-sentences', () => {
     it(
       `should return "${expected}" when sentences are "${sentences}"`,
       () => {
-        expect(mostWordsFound(sentences)).toBe(expected);
+        expect(mostWordsFound(sentences))
+          .toBe(expected);
       },
     );
   });

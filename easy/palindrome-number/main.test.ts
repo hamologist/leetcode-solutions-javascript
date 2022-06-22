@@ -11,14 +11,16 @@ describe('is-palindrome', () => {
   test.each(testCases)(
     'isPalindrome where x is %s',
     (x: number, expected: boolean) => {
-      expect(isPalindrome(x)).toBe(expected);
+      expect(isPalindrome(x))
+        .toBe(expected);
     },
   );
 
   test.each(testCases)(
     'isPalindromeWithForLoop where x is %s',
     (x: number, expected: boolean) => {
-      expect(isPalindromeWithForLoop(x)).toBe(expected);
+      expect(isPalindromeWithForLoop(x))
+        .toBe(expected);
     },
   );
 });

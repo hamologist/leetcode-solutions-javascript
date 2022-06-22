@@ -30,7 +30,8 @@ describe('root-equals-sum-of-children', () => {
     it(
       `should return ${expected} when root is ${root}, left is ${left}, and right is ${right}`,
       () => {
-        expect(checkTree(tree)).toBe(expected);
+        expect(checkTree(tree))
+          .toBe(expected);
       },
     );
   });

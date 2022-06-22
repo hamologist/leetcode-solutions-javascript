@@ -23,7 +23,11 @@ function isAnagramWithSort(s: string, t: string): boolean {
     return false;
   }
 
-  return s.split('').sort().join('') == t.split('').sort().join('');
+  return s.split('')
+    .sort()
+    .join('') == t.split('')
+    .sort()
+    .join('');
 }
 
 console.log(isAnagram('anagram', 'nagaram'));

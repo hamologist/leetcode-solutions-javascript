@@ -15,5 +15,6 @@ function reverseList(head: ListNode | null): ListNode | null {
 console.log(
   reverseList(
     arrayToListNode([1, 2, 3, 4, 5]),
-  )?.toArray(),
+  )
+    ?.toArray(),
 );

@@ -9,7 +9,8 @@ describe('build-array-from-permutation', () => {
   test.each(testCases)(
     'buildArray with nums of %s',
     (nums: number[], expected: number[]) => {
-      expect(buildArray(nums)).toStrictEqual(expected);
+      expect(buildArray(nums))
+        .toStrictEqual(expected);
     },
   );
 });

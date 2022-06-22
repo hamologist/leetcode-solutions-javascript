@@ -1,15 +1,16 @@
 export class ListNode {
-  val: number
-  next: ListNode | null
+  val: number;
+
+  next: ListNode | null;
 
   constructor(val?: number, next?: ListNode | null) {
-    this.val = (val === undefined ? 0 : val)
-    this.next = (next === undefined ? null : next)
+    this.val = (val === undefined ? 0 : val);
+    this.next = (next === undefined ? null : next);
   }
 
   toArray(): Array<number> {
     let head: ListNode | null = this;
-    let list: Array<number> = [];
+    const list: Array<number> = [];
     while (head !== null) {
       list.push(head.val);
       head = head.next;
@@ -30,4 +31,3 @@ export function arrayToListNode(nums: number[]): ListNode | null {
 
   return current;
 }
-

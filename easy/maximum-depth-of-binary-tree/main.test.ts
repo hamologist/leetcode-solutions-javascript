@@ -32,7 +32,8 @@ describe('maximum-depth-of-binary-tree', () => {
   test.each(testCases)(
     'maxDepth with a tree of %s',
     (description: string, testCase: TreeNode | null, expectedResult: number) => {
-      expect(maxDepth(testCase)).toBe(expectedResult);
+      expect(maxDepth(testCase))
+        .toBe(expectedResult);
     },
   );
 });
