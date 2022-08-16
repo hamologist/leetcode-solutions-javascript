@@ -3,6 +3,35 @@ interface TopK {
   count: number,
 }
 
+function topKFrequent(nums: number[], k: number): number[] {
+    const lookup = new Map<number, number>();
+    const freq: number[][] = Array.from({ length: nums.length + 1 }, () => []);
+    
+    for (const num of nums) {
+        const count = lookup.get(num) || 0;
+        
+        lookup.set(num, count + 1);
+    }
+    
+    for (const [num, count] of lookup.entries()) {
+        freq[count].push(num);
+    }
+    
+    const result: number[] = [];
+    for (let i = freq.length - 1; i >= 0; i--) {
+        for (const num of freq[i]) {
+            result.push(num);
+            k -= 1;
+            
+            if (k == 0) {
+                return result;
+            }
+        }
+    }
+    
+    return result;
+};
+
 function compareTopK(a: TopK, b: TopK) {
   if (a.count < b.count) {
     return 1;
@@ -13,7 +42,7 @@ function compareTopK(a: TopK, b: TopK) {
   return 0;
 }
 
-function topKFrequentNoSort(nums: number[], k: number): number[] {
+export function topKFrequentNoSort(nums: number[], k: number): number[] {
   const countLookup = new Map<number, number>();
   const topK: Array<TopK> = [];
 
@@ -37,7 +66,7 @@ function topKFrequentNoSort(nums: number[], k: number): number[] {
   return ans;
 }
 
-function topKFrequent(nums: number[], k: number): number[] {
+export function topKFrequentWithSort(nums: number[], k: number): number[] {
   nums.sort();
   const topK: Array<TopK> = [];
   let prev = nums[0];
@@ -69,6 +98,5 @@ function topKFrequent(nums: number[], k: number): number[] {
   return ans;
 }
 
-console.log(topKFrequent([1, 1, 1, 2, 2, 3], 2));
-console.log(topKFrequent([1], 1));
-console.log(topKFrequentNoSort([4, 1, -1, 2, -1, 2, 3], 2));
+export default topKFrequent;
+

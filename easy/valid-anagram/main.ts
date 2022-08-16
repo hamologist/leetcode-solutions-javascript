@@ -1,22 +1,28 @@
 function isAnagram(s: string, t: string): boolean {
-  if (s.length !== t.length) {
-    return false;
-  }
-
-  const lookup = new Map<string, number>();
-  for (let i = 0; i < s.length; i++) {
-    lookup.set(s[i], (lookup.get(s[i]) || 0) + 1);
-    lookup.set(t[i], (lookup.get(t[i]) || 0) - 1);
-  }
-
-  for (const count of lookup.values()) {
-    if (count !== 0) {
-      return false;
+    if (s.length !== t.length) {
+        return false;
     }
-  }
-
-  return true;
-}
+    
+    const lookup = new Map<string, number>();
+    
+    for (const char of s) {
+        const count = lookup.get(char) || 0;
+        
+        lookup.set(char, count + 1);
+    }
+    
+    for (const char of t) {
+        const count = lookup.get(char);
+        
+        if (count === undefined || count === 0) {
+            return false;
+        }
+        
+        lookup.set(char, count - 1);
+    }
+    
+    return true;
+};
 
 function isAnagramWithSort(s: string, t: string): boolean {
   if (s.length !== t.length) {

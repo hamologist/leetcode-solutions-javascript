@@ -1,20 +1,34 @@
 function groupAnagrams(strs: string[]): string[][] {
-  const lookup = new Map<string, string[]>();
-
-  for (const word of strs) {
-    const key = word.split('')
-      .sort()
-      .join('');
-
-    if (lookup.has(key)) {
-      lookup.get(key)
-        ?.push(word);
-    } else {
-      lookup.set(key, [word]);
+    const lookup = new Map<string, string[]>();
+    
+    for (const str of strs) {
+        const sorted = [...str].sort().join('');
+        const target = lookup.get(sorted) || [];
+        target.push(str);
+        
+        lookup.set(sorted, target);
     }
-  }
+    
+    return [...lookup.values()];
+};
 
-  return [...lookup.values()];
-}
+export function groupAnagramsWithoutSort(strs: string[]): string[][] {
+    const lookup = new Map<string, string[]>();
+    
+    for (const str of strs) {
+        const keyBuilder = Array(26).fill(0);
+        
+        for (const char of str) {
+            keyBuilder[char.charCodeAt(0) - 'a'.charCodeAt(0)] += 1;
+        }
+        const key = keyBuilder.join();
+        const target = lookup.get(key) || [];
+        target.push(str);
+        
+        lookup.set(key, target);
+    }
+    
+    return [...lookup.values()];
+};
 
-console.log(groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));
+export default groupAnagrams;
