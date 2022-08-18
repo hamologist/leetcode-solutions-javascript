@@ -1,22 +1,27 @@
 function generateParenthesis(n: number): string[] {
-  const vals: Array<string> = [];
-  (function inner(left: number, right: number, acc: string): void {
-    if (left == 0 && right == 0) {
-      vals.push(acc);
-      return;
-    }
-    if (left == 0) {
-      return inner(left, right - 1, `${acc})`);
-    }
-    if (right > left) {
-      inner(left, right - 1, `${acc})`);
-    }
-    inner(left - 1, right, `${acc}(`);
-  }(n - 1, n, '('));
+    const result = [];
+    
+    let currentStack: [number, number, string][] = [[n, n, '']];
+    
+    while (currentStack.length > 0) {
+        const [left, right, token] = currentStack.pop()!;
 
-  return vals;
-}
+        if (left === 0 && right === 0) {
+            result.push(token);
+            continue;
+        }
 
-console.log(generateParenthesis(1));
-console.log(generateParenthesis(2));
-console.log(generateParenthesis(3));
+        if (left > 0) {
+            currentStack.push([left - 1, right, `${token}(`]);
+        }
+
+        if (right > left) {
+            currentStack.push([left, right - 1, `${token})`]);
+        }
+    }
+    
+    return result;
+};
+
+export default generateParenthesis;
+
