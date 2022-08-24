@@ -1,4 +1,26 @@
 function findDuplicate(nums: number[]): number {
+    let slow = nums[0];
+    let fast = nums[0];
+    
+    while (true) {
+        slow = nums[slow];
+        fast = nums[nums[fast]];
+        
+        if (slow === fast) {
+            break;
+        }
+    }
+    
+    slow = nums[0];
+    while (slow !== fast) {
+        slow = nums[slow];
+        fast = nums[fast];
+    }
+    
+    return slow
+};
+
+export function findDuplicateWithLookup(nums: number[]): number {
   const lookup = new Map<number, boolean>();
   let dupe = 0;
   for (const num of nums) {
@@ -14,7 +36,5 @@ function findDuplicate(nums: number[]): number {
   return dupe;
 }
 
-console.log(findDuplicate([1, 3, 4, 2, 2]));
-console.log(findDuplicate([3, 1, 3, 4, 2]));
-console.log(findDuplicate([1, 1]));
-console.log(findDuplicate([1, 1, 2]));
+export default findDuplicate;
+
