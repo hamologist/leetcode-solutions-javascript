@@ -1,7 +1,7 @@
-import { TreeNode } from "../../_shared/TreeNode";
+import { TreeNode } from '../../_shared/TreeNode';
 
-function isBalanced(root: TreeNode | null): boolean {
-    let result = true;
+function diameterOfBinaryTree(root: TreeNode | null): number {
+    let result = 0;
     
     const inner = (node: TreeNode | null): number => {
         if (node === null) {
@@ -10,11 +10,7 @@ function isBalanced(root: TreeNode | null): boolean {
         
         const left = inner(node.left);
         const right = inner(node.right);
-        
-        if (Math.abs(left - right) > 1) {
-            result = false;
-        }
-        
+        result = Math.max(result, left + right);
         return 1 + Math.max(left, right);
     }
     inner(root);
@@ -22,5 +18,5 @@ function isBalanced(root: TreeNode | null): boolean {
     return result;
 };
 
-export default isBalanced;
+export default diameterOfBinaryTree;
 

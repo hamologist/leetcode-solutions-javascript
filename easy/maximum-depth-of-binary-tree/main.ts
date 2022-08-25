@@ -1,18 +1,21 @@
 import { TreeNode } from '../../_shared/TreeNode';
 
 function maxDepth(root: TreeNode | null): number {
-  let ans = 0;
-
-  (function inner(_root: TreeNode | null, current: number) {
-    if (_root !== null) {
-      inner(_root!.left, current + 1);
-      inner(_root!.right, current + 1);
-    } else {
-      ans = Math.max(ans, current);
+    let maxDepth = 0;
+    
+    const inner = (node: TreeNode | null, depth: number) => {
+        if (node === null) {
+            return;
+        }
+        
+        maxDepth = Math.max(maxDepth, depth);
+        
+        inner(node.left, depth + 1);
+        inner(node.right, depth + 1);
     }
-  }(root, 0));
-
-  return ans;
+    inner(root, 1);
+    
+    return maxDepth;
 }
 
 export default maxDepth;
