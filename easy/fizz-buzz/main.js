@@ -1,5 +1,9 @@
-function fizzBuzz(n: number): string[] {
-  const answer: Array<string> = [];
+/**
+ * @param {number} n
+ * @return {string[]}
+ */
+function fizzBuzz(n) {
+  const answer = [];
 
   for (let i = 1; i <= n; i++) {
     if (i % 3 == 0 && i % 5 == 0) {
@@ -16,4 +20,5 @@ function fizzBuzz(n: number): string[] {
   return answer;
 }
 
-console.log(fizzBuzz(15));
+module.exports = { fizzBuzz };
+
